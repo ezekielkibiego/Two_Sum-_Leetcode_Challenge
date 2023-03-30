@@ -16,16 +16,29 @@ class Solution:
                 left += 1
             else:
                 right -= 1
-    print(twoSum([2,7,11,15], 26))
+    # Example usage
+    print(twoSum([2,7,11,15], 18))
+    
 
+# The twoSum function takes two arguments: nums, 
+# which is a list of integers, and target, which is also an integer. 
+# The function returns a list of two integers,
+# which are the indices of the two numbers in the nums list that add up to the target value.
 
-# The second solution uses a two-pointer approach to find the solution. 
-# We first create a new list called nums_with_indices that contains tuples of the form (num, index) 
-# for each number num and its index in the original nums list.
-# We then sort this list by the values of the numbers. 
-# We initialize two pointers left and right to point to the first and last elements of the sorted list, respectively. 
+# This solution uses a technique called the "two-pointer approach" to find the solution. 
+# We first create a new list called nums_with_indices that contains tuples of the form (num, index) for each number num and its index in the original nums list. 
+# We then sort this list by the values of the numbers.
+
+# Next, we create two pointers left and right. 
+# The left pointer starts at the beginning of the sorted list, and the right pointer starts at the end of the sorted list. 
 # We then check if the sum of the numbers at the left and right pointers is equal to the target value. 
-# If it is, we return the indices of these numbers.
-# If the sum is less than the target value, we move the left pointer to the right, which increases the sum.
-# If the sum is greater than the target value, we move the right pointer to the left, which decreases the sum.
+# If it is, we have found the solution, and we return the indices of these numbers.
+
+# If the sum is less than the target value, we know that we need a larger sum, so we move the left pointer to the right, 
+# which increases the sum. If the sum is greater than the target value, we know that we need a smaller sum, 
+# so we move the right pointer to the left, which decreases the sum.
+
 # We repeat this process until we find the solution or the left pointer is greater than or equal to the right pointer.
+# By moving the pointers in this way, we are able to narrow down the search space and find the solution in linear time (i.e., O(n)), 
+# where n is the length of the nums list.
+
